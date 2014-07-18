@@ -1,0 +1,5 @@
+## YAML ftp config.
+---
+server: nizrp.narod.ru
+user  : onizrp
+pass  : 969357
