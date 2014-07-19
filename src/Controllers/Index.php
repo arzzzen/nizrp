@@ -1,11 +1,11 @@
 <?php
 namespace Admin\Controllers;
+use Admin\Lib\Controller;
 
-class Index extends \Lib\Controller {
-	function __construct() {
-	}
-        
+class Index extends Controller {
+
         public function index() {
-            echo 'index index';
+            $class = $this->getClassName();
+            $this->render(array('content' => $class));
         }
 }

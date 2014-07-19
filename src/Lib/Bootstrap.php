@@ -11,8 +11,15 @@ class Bootstrap {
     
     public static function boot() {
         $projectDir = dirname(__DIR__);
-        $yaml = Yaml::parse(file_get_contents($projectDir.'/conf/conf.yml'));
-        echo var_dump($yaml);
+        $ftp = Yaml::parse(file_get_contents($projectDir.'/conf/ftp.yml'));
+    }
+    
+    /**
+     * Возвращает путь к папке проекта
+     * @return string Путь к папке проекта
+     */
+    public static function getDir() {
+        return dirname(__DIR__);
     }
 
 }
