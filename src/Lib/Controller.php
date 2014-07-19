@@ -31,7 +31,7 @@ class Controller {
             $called_func = mb_strtolower(debug_backtrace(1)[1]['function']);
             $layout = $short_controller_class.DIRECTORY_SEPARATOR.$called_func.'.twig';
         }
-        $projectDir = Bootstrap::getDir();
+        $projectDir = Bootstrap::$projectDir;
         $loader = new \Twig_Loader_Filesystem($projectDir.DIRECTORY_SEPARATOR.'Views');
         $twig = new \Twig_Environment($loader);
         $template = $twig->loadTemplate($layout);

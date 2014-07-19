@@ -1,0 +1,12 @@
+{# Отображение письма #}
+<strong>Сообщение:</strong><br>
+{{ message.message_text|raw }}
+{% if message.message_files %}
+    <br>
+    <strong>Файлы:</strong>
+    <ul>
+        {% for file in message.message_files %}
+            <li>{{ file.filename }} | {{ file.size }} байт</li>
+        {% endfor %}
+    </ul>
+{% endif %}

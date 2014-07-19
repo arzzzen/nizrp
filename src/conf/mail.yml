@@ -1,0 +1,8 @@
+## YAML Template.
+---
+host  : imap.yandex.ru
+port  : 143
+login : nicrp@yandex.ru
+pass  : gD8Sxe37
+param : /imap/notls
+folder: INBOX

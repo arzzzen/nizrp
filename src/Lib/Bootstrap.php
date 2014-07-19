@@ -4,22 +4,19 @@ namespace Admin\Lib;
 use Symfony\Component\Yaml\Yaml;
 
 class Bootstrap {
-
-    function __construct() {
-        
-    }
-    
-    public static function boot() {
-        $projectDir = dirname(__DIR__);
-        $ftp = Yaml::parse(file_get_contents($projectDir.'/conf/ftp.yml'));
-    }
+    public static $projectDir;
     
     /**
-     * Возвращает путь к папке проекта
-     * @return string Путь к папке проекта
+     * Читает конфигурацию из Yaml файла $name
+     * @param string $name Имя файла в директории конфига
      */
-    public static function getDir() {
-        return dirname(__DIR__);
+    public static function readConfig($name) {
+        $yaml = file_get_contents(self::$projectDir.DIRECTORY_SEPARATOR.'conf'.DIRECTORY_SEPARATOR.$name.'.yml');
+        return Yaml::parse($yaml);
+    }
+
+    public static function boot() {
+        self::$projectDir = dirname(__DIR__);
     }
 
 }

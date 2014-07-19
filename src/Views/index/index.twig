@@ -1,4 +1,7 @@
 {% extends "layout.twig" %}
 {% block content %}
-    {{ content }}
+    {% for message in messages %}
+        <hr>
+        {% include "Extended/Mailer/mail.twig" %}
+    {% endfor %}
 {% endblock %}
